@@ -45,37 +45,37 @@ const { Cafe_name, Cafe_email, Cafe_add, Cafe_phone,
 }
 
  //delete cafe info
- export const deleteCafe = async(req, res) => {
-    const { id } = req.params
+//  export const deleteCafe = async(req, res) => {
+//     const { id } = req.params
 
-    if (!mongoose.Types.ObjectId.isValid(id)) {
-        return res.status(404).json({error: 'No such cafe info'}) 
-      }
+//     if (!mongoose.Types.ObjectId.isValid(id)) {
+//         return res.status(404).json({error: 'No such cafe info'}) 
+//       }
   
-      const cafe = await Cafe.findOneAndDelete({_id: id})
+//       const cafe = await Cafe.findOneAndDelete({_id: id})
 
-      if(!cafe) {
-        return res.status(404).json({error: 'No such cafe info'})
-      }
+//       if(!cafe) {
+//         return res.status(404).json({error: 'No such cafe info'})
+//       }
     
-      res.status(200).json(cafe)
- }   
+//       res.status(200).json(cafe)
+//  }   
 
  //update cafe info
- export const updateCafe = async(req, res) => {
-    const { id } = req.params
+//  export const updateCafe = async(req, res) => {
+//     const { id } = req.params
         
-  if (!mongoose.Types.ObjectId.isValid(id)) {
-    return res.status(404).json({error: 'No such cafe info'}) 
-  }
+//   if (!mongoose.Types.ObjectId.isValid(id)) {
+//     return res.status(404).json({error: 'No such cafe info'}) 
+//   }
 
-  const cafe = await Cafe.findOneAndUpdate({_id:  id}, {
-    ...req.body
-  })
+//   const cafe = await Cafe.findOneAndUpdate({_id:  id}, {
+//     ...req.body
+//   })
 
-  if(!cafe) {
-    return res.status(404).json({error: 'No such cafe info'})
-  }
+//   if(!cafe) {
+//     return res.status(404).json({error: 'No such cafe info'})
+//   }
   
-  res.status(200).json(cafe)
- }
+//   res.status(200).json(cafe)
+//  }
